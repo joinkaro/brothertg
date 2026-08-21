@@ -11,10 +11,30 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2331180244372267');
+
+fbq('init', '2331180244372267'); // अपनी Pixel ID डालें
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
+
+<!-- Telegram Join Button -->
+<a id="telegramBtn" href="https://t.me/+Unsh_qMcXgJjMTM1" class="btn">
+  Join Telegram Channel
+</a>
+
+<script>
+  // URL से Facebook Click ID (fbclid) और User Data निकालकर Telegram Link में जोड़ना
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fbclid = urlParams.get('fbclid') || '';
+    const btn = document.getElementById('telegramBtn');
+    
+    if (btn && fbclid) {
+      // टेलीग्राम स्टार्ट पैरामीटर में fbclid भेजेंगे
+      btn.href = `https://t.me/@dev_requestbot?start=${fbclid}`;
+    }
+  });
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ADPROFIT AGENCY | Official Telegram</title>
