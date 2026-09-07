@@ -354,14 +354,16 @@
           <span class="benefit">Direct support</span>
         </div>
 
-        <!-- Replace the href below with the real Telegram channel invite URL. -->
-        <a class="telegram-cta" href="https://t.me/+jqbXR87-8JxjMTQ1" data-sf-telegram>
-          <span class="cta-copy">
-            <strong>Join Telegram channel</strong>
-            <small>Open Telegram and continue securely</small>
-          </span>
-          <span class="cta-icon" aria-hidden="true">➜</span>
-        </a>
+        <!--
+          Replace the href below with the real Telegram channel URL.
+          Add data-sf-join-request="true" only when administrator approval is required.
+        -->
+<a
+  href="https://t.me/+jqbXR87-8JxjMTQ1"
+  data-sf-telegram
+  data-sf-join-request="true">
+  Request to Join
+</a>
 
         <p class="privacy-note">You can leave the community at any time. No payment is requested on this page.</p>
       </section>
@@ -377,12 +379,12 @@
           </div>
           <div class="step">
             <span class="step-number">2</span>
-            <div><strong>Start the bot</strong><span>Your visit is connected to this session.</span></div>
+            <div><strong>Open the channel</strong><span>A secure, session-aware invite opens directly.</span></div>
             <span class="status">Tracked</span>
           </div>
           <div class="step">
             <span class="step-number">3</span>
-            <div><strong>Join the channel</strong><span>Membership is verified automatically.</span></div>
+            <div><strong>Join or request access</strong><span>Your action is verified automatically.</span></div>
             <span class="status">Verified</span>
           </div>
         </div>
@@ -404,7 +406,7 @@
   <script
     id="signalflow-tracker"
     async
-    src="https://signalflow.adprofit.in/tracker.js?v=20260906"
+    src="https://signalflow.adprofit.in/tracker.js?v=20260907-2"
     data-key="44f3b787604051598a995a3fd2d4df97"
     data-mode="test"
     data-test-event-code="TEST29750"></script>
@@ -415,7 +417,7 @@
       var cta = document.querySelector('[data-sf-telegram]');
       var incomplete = tracker.dataset.key.indexOf('REPLACE_') === 0 ||
         tracker.dataset.testEventCode === 'TEST29750' ||
-        cta.href.indexOf('https://adprofitagency.vercel.app') !== -1;
+        cta.href.indexOf('https://t.me/+jqbXR87-8JxjMTQ1') !== -1;
       document.getElementById('setup-warning').hidden = !incomplete;
     }());
   </script>
