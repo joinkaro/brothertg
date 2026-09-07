@@ -1,79 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join our private Telegram community for focused updates and member support.">
+  <title>Private Community Access</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f7fbff;
+      --muted: #9db0c9;
+      --line: rgba(255, 255, 255, .12);
+      --panel: rgba(13, 29, 50, .82);
+      --blue: #2f7cff;
+      --cyan: #34d6e9;
+      --green: #38d39f;
+      --shadow: 0 30px 90px rgba(0, 0, 0, .42);
+    }
 
-    <script async src="https://signalflow.adprofit.in/tracker.js?v=20260906-1" data-key="44f3b787604051598a995a3fd2d4df97"></script>
+    * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ADPROFIT AGENCY | Official Telegram</title>
-    <meta name="description" content="Join AdProfit Agency More Grow, More Profile, Work With Ad Profit.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 16% 12%, rgba(47, 124, 255, .24), transparent 34rem),
+        radial-gradient(circle at 86% 78%, rgba(52, 214, 233, .14), transparent 30rem),
+        #06101d;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 28px rgba(47, 124, 255, .35);
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .875rem;
+      font-weight: 650;
+    }
+
+    .live::before {
+      width: 8px;
+      height: 8px;
+      content: "";
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(56, 211, 159, .12);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+      gap: 54px;
+      align-items: center;
+      min-height: calc(100vh - 148px);
+      padding: 64px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 20px;
+      color: #8db8ff;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 26px;
+      height: 2px;
+      content: "";
+      background: var(--cyan);
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.65rem, 6vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(110deg, #fff 4%, #74a9ff 54%, #4ae4e4 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .intro {
+      max-width: 610px;
+      margin: 26px 0 32px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .benefit {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #c9d7e9;
+      background: rgba(255, 255, 255, .04);
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .telegram-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(100%, 470px);
+      min-height: 74px;
+      padding: 14px 18px 14px 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 18px;
+      color: white;
+      background: linear-gradient(110deg, #1766e8, #249edc);
+      box-shadow: 0 22px 50px rgba(24, 105, 230, .32);
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .telegram-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 26px 60px rgba(24, 105, 230, .42);
+    }
+
+    .telegram-cta:focus-visible {
+      outline: 3px solid rgba(52, 214, 233, .7);
+      outline-offset: 4px;
+    }
+
+    .cta-copy {
+      display: grid;
+      text-align: left;
+    }
+
+    .cta-copy strong {
+      font-size: 1rem;
+      letter-spacing: .01em;
+    }
+
+    .cta-copy small {
+      color: rgba(255, 255, 255, .75);
+      font-size: .78rem;
+    }
+
+    .cta-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .16);
+      font-size: 1.2rem;
+    }
+
+    .privacy-note {
+      margin: 14px 0 0;
+      color: #7f93ad;
+      font-size: .8rem;
+    }
+
+    .journey {
+      position: relative;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(160deg, rgba(20, 42, 70, .9), rgba(8, 23, 40, .84));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .journey::before {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      border-radius: inherit;
+      background: linear-gradient(140deg, rgba(255,255,255,.08), transparent 42%);
+    }
+
+    .journey h2 {
+      position: relative;
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+      letter-spacing: -.025em;
+    }
+
+    .journey > p {
+      position: relative;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .steps {
+      position: relative;
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .step-number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      color: #9ac0ff;
+      background: rgba(47, 124, 255, .14);
+      font-weight: 800;
+    }
+
+    .step strong,
+    .step span { display: block; }
+
+    .step strong { font-size: .92rem; }
+    .step span { color: var(--muted); font-size: .78rem; }
+
+    .status {
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #73e9c4;
+      background: rgba(56, 211, 159, .1);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .setup-warning {
+      position: relative;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 195, 75, .32);
+      border-radius: 13px;
+      color: #ffd98a;
+      background: rgba(255, 166, 0, .08);
+      font-size: .8rem;
+    }
+
+    footer {
+      padding: 22px 0 28px;
+      border-top: 1px solid var(--line);
+      color: #71859d;
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      header { min-height: 68px; }
+      main { grid-template-columns: 1fr; gap: 42px; min-height: auto; padding: 54px 0; }
+      h1 { max-width: 650px; }
+      .journey { padding: 22px; }
+    }
+
+    @media (max-width: 520px) {
+      .shell { width: min(100% - 22px, 1120px); }
+      .live { font-size: 0; }
+      .live::after { content: "Live"; font-size: .8rem; }
+      main { padding-top: 42px; }
+      h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
+      .telegram-cta { width: 100%; }
+      .step { grid-template-columns: 38px 1fr; }
+      .step-number { width: 38px; height: 38px; }
+      .status { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .telegram-cta { transition: none; }
+    }
+  </style>
 </head>
 <body>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="brand-mark">S</span> Signal Community</div>
+      <div class="live">Community access available</div>
+    </header>
 
+    <main>
+      <section aria-labelledby="page-title">
+        <p class="eyebrow">Private Telegram access</p>
+        <h1 id="page-title">Stay informed.<br><span class="gradient-text">Move with clarity.</span></h1>
+        <p class="intro">Join one focused channel for timely announcements, practical guides and direct community support.</p>
 
-<script async src="https://signalflow.adprofit.in/tracker.js" data-key="e3144ba2d512aa0d4656f138917347bd"></script>
-   
-    <div class="overlay"></div>
-    <div class="container">
-        <main class="card">
-            <div class="badge">SINCE 2024</div>
-            <div class="profile-section">
-                <div class="profile-pic">
-                    <img src="https://ik.imagekit.io/fyojnbena/978C4B88-30AE-49E1-9470-CC8DD11D4026%202.PNG" alt="Sanju Profile">
-                    <div class="verified-tick">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <h1>AdProfit Agency</h1>
-                <div class="sub-count">
-                    <span class="pulse"></span> 3,947 Subscribers
-                </div>
-            </div>
+        <div class="benefits" aria-label="Community benefits">
+          <span class="benefit">Focused updates</span>
+          <span class="benefit">Member guides</span>
+          <span class="benefit">Direct support</span>
+        </div>
 
-            <div class="content">
-                <p>Provide Strong Meta Ad Accounts Why Choose Me? Unlimited Replacment * Unlimited Spending</p>
-                
-                <div class="features">
-                    <div class="feature-item">
-                        <span class="icon">📊</span>
-                        <span>Unlimited Spending</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="icon">🔥</span>
-                        <span>Free Replacement</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="icon">⚡</span>
-                        <span>Best Support</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Replace the href below with the real Telegram channel invite URL. -->
+        <a class="telegram-cta" href="https://t.me/YOUR_CHANNEL_OR_BOT" data-sf-telegram>
+          <span class="cta-copy">
+            <strong>Join Telegram channel</strong>
+            <small>Open Telegram and continue securely</small>
+          </span>
+          <span class="cta-icon" aria-hidden="true">➜</span>
+        </a>
 
-            <div class="action-section">
-                <a href="https://t.me/+iHteF0ns1wtmZWE1" data-sf-telegram>Join Telegram</a>
-                        JOIN TELEGRAM CHANNEL
-                        <small>Join for Free Now</small>
-                    </span>
-                    <div class="button-shine"></div>
-                </a>
-                <p class="safe-note">Join 200+ members trust</p>
-            </div>
-        </main>
-        
-        <footer>
-            <p>&copy;  ADPROFIT AGENCY. All rights reserved.</p>
-        </footer>
-    </div>
+        <p class="privacy-note">You can leave the community at any time. No payment is requested on this page.</p>
+      </section>
 
-    <script src="script.js"></script>
+      <aside class="journey" aria-labelledby="journey-title">
+        <h2 id="journey-title">What happens next</h2>
+        <p>A short, transparent path into the community.</p>
+        <div class="steps">
+          <div class="step">
+            <span class="step-number">1</span>
+            <div><strong>Open Telegram</strong><span>The secure Telegram app or website opens.</span></div>
+            <span class="status">Ready</span>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <div><strong>Start the bot</strong><span>Your visit is connected to this session.</span></div>
+            <span class="status">Tracked</span>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <div><strong>Join the channel</strong><span>Membership is verified automatically.</span></div>
+            <span class="status">Verified</span>
+          </div>
+        </div>
+        <div class="setup-warning" id="setup-warning" hidden>
+          Demo setup is incomplete. Replace the Public Key, Telegram URL and Meta Test Event Code in this file.
+        </div>
+      </aside>
+    </main>
+
+    <footer>This demo page is designed for SignalFlow PageView → Subscribe → Telegram Join testing.</footer>
+  </div>
+
+  <!--
+    SETUP:
+    1. Replace REPLACE_WITH_CLIENT_PUBLIC_KEY with the pixel's 32-character SignalFlow Public Key.
+    2. Replace TEST12345 with the code displayed in Meta Events Manager > Test Events.
+    3. For production traffic, remove data-mode and data-test-event-code.
+  -->
+  <script
+    id="signalflow-tracker"
+    async
+    src="https://signalflow.adprofit.in/tracker.js?v=20260906"
+    data-key="44f3b787604051598a995a3fd2d4df97"
+    data-mode="test"
+    data-test-event-code="TEST29750"></script>
+
+  <script>
+    (function () {
+      var tracker = document.getElementById('signalflow-tracker');
+      var cta = document.querySelector('[data-sf-telegram]');
+      var incomplete = tracker.dataset.key.indexOf('REPLACE_') === 0 ||
+        tracker.dataset.testEventCode === 'TEST29750' ||
+        cta.href.indexOf('https://adprofitagency.vercel.app') !== -1;
+      document.getElementById('setup-warning').hidden = !incomplete;
+    }());
+  </script>
 </body>
 </html>
